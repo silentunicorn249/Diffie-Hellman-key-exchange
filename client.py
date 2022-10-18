@@ -31,7 +31,7 @@ with socket(AF_INET, SOCK_STREAM) as s:
         clientKey = base ** pvt % mod
         print(f"Generated clientLey: {clientKey}\n")
 
-        print("Exchanging keys...")
+        print("Sending clientKey...")
         s.send(str(clientKey).encode())
 
         key = serverKey**pvt % mod

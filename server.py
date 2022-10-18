@@ -43,15 +43,14 @@ with socket(AF_INET, SOCK_STREAM) as s:
         print("Waiting for a connection...")
         while True:
             try:
-                # print("Waiting for connection...")
                 c, a = s.accept()
                 print(f"Got connection from: {a}\n")
 
-                print("Exchanging keys...")
-
+                print("Sending public keys...")
                 keys = f"{str(base)} {str(mod)} {str(serverKey)}"
-
                 c.send(bytes(str(keys).encode()))
+
+                print("Getting clientKey...")
                 clientKey = int(c.recv(128).decode())
                 print(f"Got clientKey: {clientKey}")
 
