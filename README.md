@@ -1,4 +1,4 @@
-# Diffie-Hellman-key-exchange
+# Diffie-Hellman key exchange
 
 ## Usage:
 #### First run "server.py" first from command line
